@@ -1,0 +1,35 @@
+.fs-container {
+   display: flex;
+   margin: 100px 40px 0 50px;
+}
+
+.fs-container .form-group {
+    margin: -25px 0 10px 20px;
+    width: 400px;
+    padding: 20px;
+    display: inline-block;
+    
+}
+
+.react-datepicker-wrapper {
+    /* margin-right: 8px; */
+    margin: 20px 8px 0 20px;
+    display: inline-block;
+    
+}
+
+.react-datepicker__input-container > input {
+    margin-top: 8px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    
+}
+
+Button {
+    margin: 20px 0 0 700px;
+    width: 80px;
+    background-color: blue;
+    color: white;
+
+}
