@@ -3,7 +3,6 @@ import React from 'react';
 import {FormGroup, FormControl, Button, Navbar, Nav } from 'react-bootstrap';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
-// import Date from 'react.date';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
@@ -14,9 +13,10 @@ class Locations extends React.Component {
     super();
     this.state = {
       userInput:'',
-      startDate: new Date()
+      currentDate: new Date()
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleDatehange = this.handleDateChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   
   }
@@ -31,14 +31,14 @@ class Locations extends React.Component {
     event.preventDefault();
   }
 
-  dateChange = date => {
+  handleDateChange(date) {
 		this.setState ({
-			startDate: date
+			currentDate: date
 		});
   }
   
-
 render() {
+  
   return ( 
   <React.Fragment >
   <div className="Navbar">
@@ -69,37 +69,34 @@ render() {
         <FormControl 
           type="text"
           placeholder="Destination" 
-          // value={this.state.value} 
+          value={this.state.value} 
           onChange={this.handleChange} 
         />
       </FormGroup>
       <DatePicker 
-    
         placeholderText="Departure date"
-        selected={ this.state.selectedDate }
+        selected={this.state.currentDate}
         dropdownMode="select"
         showMonthDropdown
 	      showYearDropdown
 	      maxDate={ moment().add(10,'years')}
         minDate={ moment().subtract(10,'years')}
-        dropdownMode="scroll"
-        OnChange={this.dateChange}             
+        OnChange={this.handleDateChange}             
       />
       <DatePicker
         placeholderText="Return date" 
-        selected={ this.state.selectedDate }
+        selected={ this.state.currentDate }
         dropdownMode="select"
         showMonthDropdown
 	      showYearDropdown
 	      maxDate={ moment().add(10,'years')}
         minDate={ moment().subtract(10,'years')}
-        dropdownMode="scroll"
-        OnChange={this.dateChange}            
+        OnChange={this.handleDateChange}            
       /> 
     </form>
     <Button
         type="submit"
-        bsStyle="primary"
+        btnstyle="primary"
         style={{height: '46px'}}
       >
       {'Search'}
