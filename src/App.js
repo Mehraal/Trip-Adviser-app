@@ -4,6 +4,7 @@ import {FormGroup, FormControl, Button, Navbar, Nav } from 'react-bootstrap';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-datepicker/dist/react-datepicker.css';
 
 import './App.css';
 
